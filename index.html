@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Physics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=AM_CHTML"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="card navigation">
+        <div class="navbar nav-top">
+            <nav>
+                <ul>
+                    <li><button><i class="fas fa-home"></i></button></li>
+                    <li><button><i class="fas fa-graduation-cap"></i></button></li>
+                    <li><button><i class="fas fa-bookmark"></i></button></li>
+                    <li><button onclick="changeTheme()"><i class="fas fa-fan"></i></button></li>
+                    <li><button><i class="fas fa-circle-info"></i></button></li>
+                    <li><button><i class="fas fa-xmark" onclick="hideNav()"></i></button></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="nav-body">
+            <h2>Course Contents</h2>
+            <h3 class="collapsible"><a href="#c1">Special Relativity</a></h3>
+            <ul class="content">
+                <li>Inertial Systems</li>
+                <li><a href="#c1.2">Michelson-Morley Experiment and its Explanation</a></li>
+                <li>Postulates of the Special Theory of Relativity</li>
+                <li>Minkowskian space time and Four Vectors</li>
+                <li>Four-velocity</li>
+                <li>Lorentz Transformation</li>
+                <li>Length Contraction</li>
+                <li>Time Dilation</li>
+                <li>Velocity Addition</li>
+                <li>Space like</li>
+                <li>Time like and Light like separated events</li>
+                <li>Light cone</li>
+                <li>Proper frame</li>
+                <li>Proper length</li>
+                <li>Proper time</li>
+                <li>Covariance of Maxwell’s Field equations</li>
+                <li>Relativistic Mass and Energy</li>
+            </ul>
+            <h3 class="collapsible"><a href="#c2">General Relativity</a></h3>
+            <ul class="content">
+                <li>Mach’s Principle</li>
+                <li> Principle of Equivalence</li>
+                <li> Principle of General Covariance</li>
+                <li> Principle of Minimum Gravitational Coupling</li>
+                <li> Correspondence Principle</li>
+                <li> Field Equations of General Relativity</li>
+                <li> Energy- Momentum Tensor</li>
+                <li> Maxwell’s Field Equations</li>
+                <li> Schwarzchild Solution</li>
+                <li> Experimental Tests of General Relativity</li>
+            </ul>
+        </div>
+
+        <!-- For Voice API -->
+        <div class="nav-bottom voice-control">
+            <ul>
+                <li>
+                    <button onclick="playPrev()"><i class="fas fa-backward-step"></i><button>
+                </li>
+                <li>
+                    <button onclick="playPause()">
+                    <i class="fas fa-circle-play"></i></button>
+                </li>
+                <li>
+                    <button onclick="playNext()"><i class="fas fa-forward-step"></i></button>
+                </li>
+                <li>
+                    <button><i class="fas fa-microphone"></i></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="card main">
+        <div class="heading">
+            <i class="fas fa-bars" onclick="showNav()"></i>
+            <h2>Special and General Relativity</h2>
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div id="docs" class="main-content">
+            <h1 id="c1">Special Relativity</h1>
+
+            <h2>Reference frame:</h2>
+            <p>Which method describes the static or dynamic states of a particle by Cartesian, polar, spherical and other coordinate systems is known as reference frame.</p>
+
+            <img src="img/fig 1.1.png" alt="Fig (1.1)">
+            <h2>Cartesian coordinate:</h2>
+            <p>The position vector of the particle P is,</p>
+            <eqn>
+                <tab></tab>`vec r = vec r_(xy) + vec r_z`<br> `=> vec r = vec r_x + vec r_y + vec z`<br> `=> vec r = vec x + vec y + vec z`
+            </eqn>
+            <p>This coordinate system is used for analysis of any object motion.</p>
+
+            <img src="img/fig 1.2.png" alt="Fig (1.2)">
+            <h2>Polar coordinate:</h2>
+            <p>Position of the particle P is,</p>
+            <eqn>
+                <tab></tab>`vec r = vec r_x + vec r_y`<br> `=> vec r = hat i vec r_x + hat j vec r_y`<br>
+                <tab></tab> `vec r = hat i cos theta + hat j r sin theta`
+            </eqn>
+            <p>This coordinate system is very much effective to study the motion of celestial object.</p>
+
+            <img src="img/fig 1.3.png" alt="Fig (1.3)">
+            <h2>Spherical coordinate:</h2>
+            <p>The position of the particle P is,</p>
+            <eqn>
+                <tab></tab>`vec r = vec r_(xy) + vec r_z`<br> `=> vec r = vec r_x + vec r_y + vec r_z`<br> `=> vec r = hat i vec r_x + hat j vec r_y + hat k vec r_z`<br> `=> vec r = hat i r_(xy) cos phi + hat j vec r_(xy) sin phi + hat k r cos theta`<br> `=>
+                vec r = hat i r sin theta cos phi + hat j r sin theta sin phi + hat k r cos theta`
+            </eqn>
+            <p>The properties of electromagnetic wave can be analyzed using spherical coordinate system.</p>
+
+            <h2>Inertial reference frame (IRF):</h2>
+            <p>When a reference frame moves at constant velocity with respect to another reference frame is known as inertial reference frame.</p>
+            <p>Let us consider, that a reference frame or an object initially at time t = 0, lies at 0 = 0'. If 0’ is the moving reference of the object which moves away from static reference frame 0 at constant velocity v at time t = t, then the coordinate
+                system of static and dynamic IRFs can be drawn as following. Now the absent of force to the moving object is defined as,</p>
+            <eqn>
+                `F = ma_y = 0`<br> `=> a_y = (v - v_0)/(t - 0) = (d^2y)/dt^2 = 0`
+            </eqn>
+            <p>Integrating both side as</p>
+            <eqn>
+                `=> dy/dt = `constant<br> `:. v_y = `constant
+            </eqn>
+            <img src="img/fig 1.4.PNG" alt="Fig: 1.4">
+            <div class="fig">Fig: 1.4</div>
+            <p>
+                This is the fulfillment of Newton's first law. Hence inertial reference frame (IRF) is based on the Newton's first law.
+            </p>
+            <h2>Non-inertial reference frame:</h2>
+            <p>When a reference frame moves at acceleration with respect to other inertial reference frame is known as non-inertial reference frame.</p>
+
+            <h2>Example:</h2>
+            <p>(i) Rotational or spin motion of earth makes it as non-inertial reference frame. It is responsible for creation of Coriolis force or effect. During depression when air flows from high to low pressure then Coriolis force or effect makes the
+                cyclone, tornado in northern hemisphere.</p>
+            <p> (ii) Accelerating rocket motion.</p>
+            <p> (iii) Accelerating expansion of universe.</p>
+
+            <h2>Coriolis force or effect:</h2>
+            <p>The Coriolis effect is most apparent in the path of an object moving longitudinally in the non-inertial reference frame. On the rotating earth, an object that moves along in North-south path, or longitudinal line, will undergo apparent deflection
+                to the right (cw) in the northern hemisphere and to the left (acw) in the southern hemisphere. This is known as Coriolis force or effect.
+            </p>
+
+            <h2>Differences between inertial reference frame and non-inertial reference frame:</h2>
+            <table>
+                <tr>
+                    <th>Inertial reference frame</th>
+                    <th>Non-inertial reference frame</th>
+                </tr>
+                <tr>
+                    <td>1. It holds Newton's first law of motion.</td>
+                    <td>1. It holds Newton's second law of motion.</td>
+                </tr>
+                <tr>
+                    <td>2. It moves at constant velocity.</td>
+                    <td>2. It moves at constant acceleration.</td>
+                </tr>
+                <tr>
+                    <td>3. Special theory of relativity deals on this reference frame.</td>
+                    <td>3. General theory of relativity deals on this reference frame.</td>
+                </tr>
+                <tr>
+                    <td>4. In equivalence principle of GR `(F_I = F_G)`, Newton's 2ⁿᵈ law of motion is valid here as inertial force. `F_I = F_I a_I`</td>
+                    <td>4. The acting force is termed as gravitational or non-inertial force. `f_G = mg`
+                    </td>
+                </tr>
+                <tr>
+                    <td>5. The acting acceleration is valid as inertial acceleration.`a_I = F_I//m_I`</td>
+                    <td>5. The acting acceleration is termed as gravitational or non-inertial acceleration.</td>
+                </tr>
+                <tr>
+                    <td>6. The mass of a object here is termed as inertial mass. `m_I = F_I//a_I`</td>
+                    <td>6. The mass of a object here is termed as gravitational or non-inertial mass. `m_G = F_G//g`
+                    </td>
+                </tr>
+            </table>
+            <h2>Differences between special theory of relativity and general theory of relativity: </h2>
+            <table>
+                <tr>
+                    <th>SR (1905)</th>
+                    <th>GR (1915)</th>
+                </tr>
+                <tr>
+                    <td>1. It deals at inertial reference frame.</td>
+                    <td>1. It deals at non-inertial reference frame.</td>
+                </tr>
+                <tr>
+                    <td>2. It deals at flat spacetime as single entity.</td>
+                    <td>2. It deals at spacetime curvature as single entity.</td>
+                </tr>
+                <tr>
+                    <td>3. It deals about relative space, time and mass rather than absolute in Newtonian mechanics.</td>
+                    <td>3. It is a geometrical theory on curvilinear coordinate about the structural systems of universe.
+                    </td>
+                </tr>
+                <tr>
+                    <td>4. It deals the mass-energy equivalence principle.</td>
+                    <td>4. It deals the equivalence principle of gravitational and inertial acceleration.</td>
+                </tr>
+                <tr>
+                    <td>5. This theory clarifies that there is no existence of ether and velocity of light is constant regardless to the speed of reference frame.</td>
+                    <td>5. By means of this theory it can be proved the concept of dark energy, dark matter and expansion of universe by means of Einstein's cosmological constant.</td>
+
+                </tr>
+            </table>
+            <h2>Hypothesis on ether:</h2>
+            <p>(i) Since surface water wave propagates on the water and sound propagates throughout the air hence to propagate light wave another medium is necessary which is termed as light bearer or ether. It is named by Christian Huygen's in 1690. It
+                belongs zero inertia and transparent medium.</p>
+            <p>(ii) In 17th century, it is assumed that the whole vacuum space of this entire universe is filled with this luminous ether.</p>
+            <p>(iii) The ether is stationary and only partially dragged by the orbital motion of the earth. `[v_orb 29.8 kms^(-1)` (menu speed),`v_(n ot o r sp i n) = 1674 km hr^(-1) = 465.1 or 408.4 ms^(-1) ]` [Augustine Jeans Fresnel, 1818].</p>
+            <p>(iv) The ether is completely dragged by earth and thus shares its motion at earth's surface (Sir George Stokes, 1844).</p>
+            <p>(v) Light propagates by means of ether. (James Clerk Maxwell, 1865).</p>
+            <p>(vi) Ether is almost stationary object which confirmed by the experiment of Hippolyte Fizeau in 1851 and explanation of aberration of star light by James Bradley in 1727.</p>
+
+            <h2 id="c1.2">Objectives of Michelson Morley experiment:</h2>
+            <p>(i) To detect the presence and the properties of stationary ether.</p>
+            <p>(ii) To measure the speed and direction of the ether wind relative to the orbital motion of the earth.
+            </p>
+            <p>(iii) To measure the motion of the earth relative to the ether wind.</p>
+            <p>(iv) To detect relative motion between earth and the ether (ii and iii are concised here).</p>
+            <p>(v) To measure the difference between the speeds of light travelling in the longitudinal and transverse direction of earth orbital motion and either wind as well.</p>
+
+            <h2>Brief history of Michelson Morley experiment:</h2>
+            <p>(1) Albert Abraham Michelson (A. A. M.) was performed alone his interferometry experiment in 1881.</p>
+            <p>(2) He considered the ether as a stationary medium.</p>
+            <p>(3) Overlooking ether effect, he miscalculate the time of transverse direction as </p>
+            <eqn>`T_t = (2l_0)/c`</eqn>
+            <p>(4) This miscalculation was corrected by Alfred Potier 1882 and Hendrik Lorentz 1886 as.</p>
+            <eqn>`T_t = (2L_0)/c 1/ sqrt(1 - v^2 / c^2)`</eqn>
+            <p>(5) Considering the ether effect, A. A. M then repeated the experiment in 1887, jolntly with chemist Edward W. Morley for corrected time of Tt.</p>
+            <p>(6) The latest one is produced perfect result on ether hypothesis.</p>
+
+            <h2>Interferometry setup:</h2>
+            <p>i) To obtain the perfect coherence length monochromatic light of laser or sodium light (yellow) can be used initially as Fig. (a).</p>
+            <p>(ii) After getting this result white light is used to visualize the distinctive fringes in the telescope.
+            </p>
+            <p>(iii) Here "S" is a light source lies in the focal point of the length L.</p>
+            <p>(iv) Hence the reflected light is parallel to the optical axis.</p>
+            <p>(v) These parallel beams falls on the amplitude divider or splitter plate A which is coated partially by Silver.</p>
+            <p>(vi) The transmitted or longitudinal beam (f) falls on the compensator plate B which equalize the optical path difference for phase matching condition between two splitting beams in the telescope.</p>
+            <img src="img/fig 1.5.png" alt="Fig (a)">
+            <p>(vii) Then the l beam falls on the mirror `M_2` and bounces back to the initial path A and recombine at the telescope to make the interference pattern.</p>
+            <p>(viii) On the other hand, reflected or transmitted beam t falls on the mirror `M_1` and bounce back to the initial path A and makes a recombination with beam l in the telescope. The separation between the `AM_1`, and `AM_2` is same as `L_0`.</p>
+
+            <h2>Working principle:</h2>
+            <p>(i) In this experiment, it is to consider that earth is moving with orbital velocity `V_(o r b) = 30 kms^(-1)`, throughout the stationary ether medium as Fig. (b).</p>
+            <p>(ii) The all components of the apparatus also move relatively in that way.
+            </p>
+            <p>(iii) According to A. J. Fresnel's hypothesis, in spite of stationary ether, the orbital motion will make partial dragging of ether wind.</p>
+            <p>(iv) Hence a beam reflecting back and forth parallel to the flow of the ether wind would take longer time than beam reflecting perpendicularly to the flow of ether wind.</p>
+            <p>(v) This indicates T > Tt
+            </p>
+
+            <img src="img/fig 1.6.PNG" alt="Fig (b)">
+            <h2>Calculation of travelling time in longitudinal direction (stationary observer): Theoretical view:
+            </h2>
+            <p>(1) Let us consider that light is sent from the source "S" as the Fig. (b) shows and propagates with the speed of light is "c" in the ether.
+            </p>
+            <p>(2) A stationary observer visualizes this affair by the telescope “T”.
+            </p>
+            <p>(3) When it passes the plate A which splits it as two components.
+            </p>
+            <p>(4) The transverse component "t" is perpendicular to the ether wind and the orbital velocity “v” of earth as well.
+            </p>
+            <p>(5) The “t” component falls on mirror Mi and it is supposed to move with velocity v to the new place of `M_1`.
+            </p>
+            <p>(6) The longitudinal component "l" of light is parallel to this speed “v”.
+            </p>
+            <p>(7) The reflecting mirror `M_2` lies at separation of L0 from the amplitude divider plate A.
+            </p>
+            <p>(8) The “l” component falls on the mirror `M_2` which also moves with velocity v to the new place of `M_2`.
+            </p>
+
+            <h2>Analytical concept for the forward travelling time:</h2>
+            <p>Let us consider as</p>
+            <p>`T_1` = Travelling time of “l” beam from A to `M_2`.</p>
+            <p>`cT_1` = Travelling distance of “l” beam from A to `M_2`'.</p>
+            <p>`vT_1` = Travelling distance of mirror `M_2` from `M_2` to `M_2`'.</p>
+            <p>For translatory motion,</p>
+            <eqn>
+                <tab></tab>`AM'_2 = AM_2 + M_2M_2'`<br> `=>cT_1 = L_0 + vT_1`<br> `=>(c - v)T_1 = L_0`<br> `=>T_1 = L_0/(c - v)`
+            </eqn>
+
+            <h2>Analytical concept for the backward travelling time:
+            </h2>
+            <p>Let us consider as
+            </p>
+            <p>`T_2`= Travellingtime of l beam from `M_2`' to A which is anti-parallel to v (ie. -v).
+            </p>
+            <p>`cT_2` = Travelling distance of l beam from to A.</p>
+            <p>`-vT_2` = Travelling distance of mirror from to by means of -v.</p>
+            <p>The translatory motion can be expressed as,</p>
+            <eqn>
+                <tab></tab>`M'_2A = M'_2 M_2 + M_2 A`<br> `=> cT_2 = - Vt_2 + L_0`<br> `=>(c + v)T_2 = L_0`<br> `=>T_2 = L_0/(c + v)`
+            </eqn>
+            <p>Total travelling time for longitudinal beam:</p>
+            <eqn>
+                `T_l = T_1 + t_2 = L_0/(c -v) + L_0/(c + v) = (2L_0c)/(c^2 - v^2) = (2L_0)/c . 1/ ((1 - v^2/c^2))`
+            </eqn>
+            <p>Michelson obtains this same expression correctly in 1881</p>
+
+            <h2>Calculation of travelling time in transverse direction:</h2>
+            <p>In 1881 Michelson obtain the incorrect expression of travelling time in transverse as, `T_t = (2L_0)/c`.</p>
+            <p>Because he overlooked that the ether wind flow v affects the transverse beam (t) travelling time. This was corrected by Alfred Potier 1882 and Hendrik Lorentz 1886.
+            </p>
+
+            <h2>Theoretical view of correction of travelling time in transverse direction:</h2>
+            <p>(1) The corrected derivation is analogous to the derivation of time dilation using a light clock.</p>
+            <p>(2) Here the stationary observer lies in the ether at the plate A as resting reference frame.</p>
+            <p>(3) The mirror M 1 lies at the L 0 vertical separation from A at time T=0.</p>
+            <p>(4) If mirror `M_1` is a moving reference frame which travels at `M_1` ' by means of ethers orbital speed and ether wind flow “v” at time `T_3`</p>
+
+            <h2>Forward travelling time (`T_3`) of transverse beam (t):</h2>
+            <p>`T_3` =Travelling time of mirror `M_1` from `M_1` to `M_1`'.</p>
+            <p>`cT_3` =Travelling distance of t beam from A to `M_1`' to an inclined path.</p>
+            <p>`vT_3` =Travelling distance of mirror `M_1` from `M_1` to `M_1`' along x-axis.</p>
+            <br>
+            <p>If we draw a right angle triangle `Delta APM'_2`, then Pythagorean theorem apply in Fig.(b) as</p>
+            <eqn>
+                <tab></tab>`( AM'_1)^2 = (AP)^2 + (PM)^2`<br> `=>(cT_3)^2 = (vT_3)^2 + l_0^2`<br> `=>(c^2 - v^2)T_3^2 = L_0^2`<br> `=>T_3 = l_)/sqrt(c^2 - v^2)`
+            </eqn>
+
+
+            <h2>Concept of Backward travelling time for transverse beam (t):</h2>
+            <p>(1) For backward travelling, the reflected “t” beam has to come back at the reflection symmetric position of incident “t” beam at A'.</p>
+            <p>(2) It is basically a virtual stationary reference frame of A.</p>
+            <p>(3) Hence, the backward travelling time of “t” beam is equal to the forward travelling time `T_3`.</p>
+            <p>Total travelling time of transverse beam “t” is obtained as,</p>
+            <eqn>
+                `T_t = T_3 + T_3 = 2T_3 = (2L_0)/sqrt(c^2 - v^2) = (2l_0)/c . 1/sqrt(1 - v^2/c^2)`
+            </eqn>
+            <p>This is the corrected `T_t` by Alfred Potier in 1882.</p>
+
+            <h2>Calculation of fringe shift:</h2>
+            <p>The time difference between `T_l` and `T_t` before rotation is given by equation (3) and (5) as</p>
+            <eqn>
+                <tab></tab>`T_l - T_t = (2l_0)/c . (1/(1 - v^2/c^2) - 1/sqrt(a - v^2/c^2))`<br> `=>cT_l - cT_t = 2L_0 (1/(1 - v^2/c^2) - 1/sqrt(a - v^2/c^2))`<br> `=>Delta _1 = 2L_0 (1/(1 - v^2/c^2) - 1/sqrt(a - v^2/c^2))`
+            </eqn>
+
+            <h3>This is the optical path difference between longitudinal and transverse beam before rotation.</h3>
+            <p>After rotation of `90^0`, the whole apparatus the equation (6),</p>
+            <eqn>
+                `Delta _2 - cT_t - cT_l = 2L_0 (1/(1 - v^2/c^2) - 1/sqrt(a - v^2/c^2))`
+            </eqn>
+
+            <h3>This is the optical path difference between the longitudinal and transverse beam after rotation of the apparatus at `90^0`. </h3>
+            <h3>The optical path length difference between the two set ups of the interferometer is obtained as,</h3>
+            <eqn>
+                <tab></tab>`Delta_1 - Delta_2 = 2L_0 (1/(1-v^2/c^2) - 1/sqrt(1-v^2/c^2) - 1/sqrt(1-v^2/c^2) + 1/(1-v^2/c^2))`<br> `=>Delta_1 - Delta_2 = 4L_0 (1/(1-v^2/c^2) - 1/sqrt(1-v^2/c^2))`<br> `=>Delta_1 - Delta_2 = 4L_0 {(1-v^2/c^2)^(-1) - (1-v^2/c^2)^(-1/2)}`
+            </eqn>
+            <p>Binomial expansion,</p>
+            <eqn>
+                `=>Delta_1 - Delta_2 = 4L_0 {(1+v^2/c^2+ ...) - (1+v^2/(2c^2) + ...)}`<br> `=>Delta_1 - Delta_2 = 4L_0 {1+v^2/c^2 -1 - v^/(2c^2)}` `=>Delta_1 - Delta_2 = (4L_0v^2)/(2c^2)`<br> `=>Delta_1 - Delta_2 = (2L_0v^2)/c^2`<br> `=>n lamda = Delta_1
+                - Delta_2 = (2L_0v^2)/c^2`<br><br>
+                <tab></tab> `n lamda =`OPD for constructive interference. <br><br> `=> n = (2L_0v^2)/(lamda c^2)`
+            </eqn>
+
+            <h3>This is the expression of interference fringe shift in Michelson-Morley interferometry experiment.</h3>
+            <eqn>
+                if `L_0` = 10m, 11m <br> v = 30 km/s = 30000m/s <br> `lamda = 500nm = 500 * 10^(-19)m` <br> `c = 3 * 10^8 m//s` <br> `:. n = 0.40, 0.44`
+            </eqn>
+            <p>This is the fringe shift will take place if there is any relative velocity between ether wind and earth's motion. Hence the velocity of light will depend on the medium of ethers
+            </p>
+            <h3>But for `L_0 = 10m`, they found experimentally that the deviation of interference fringes from zero is 0.02</h3>
+
+
+            <h2>Findings of Michelson Morley experiment:</h2>
+            <p>(i) There is no detectable relative motion of ether wind with the orbital motion of Earth
+            </p>
+            <p>(ii) Velocity of light does not depend on the ether medium and the velocity of any inertial reference frame</p>
+            <p>(iii) Fresnel hypothesis of stationary ether with partial dragging have to be rejected.</p>
+            <p>(iv) George stocke's hypothesis is also rejected for complete ether dragging by orbital motion of Earth</p>
+            <p>(v) This experiment leads to the development of (1) Lorentz Transformation, (2) special theory of relativity of Einstein.</p>
+
+            <!-- Chapter Two -->
+            <h1 id="c2">General Relativity</h1>
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/voice search.js"></script>
+    <script src="js/speech syn.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
